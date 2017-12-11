@@ -11714,6 +11714,569 @@ ul.typeahead-list > li > a {
 .ansi-bold { font-weight: bold; }
 
     </style>
+<style type="text/css">
+    /**
+ * This css is based on nipy.css and nipype.css, found under
+ * https://github.com/nipy/nipype/tree/master/doc/_static
+ */
+
+body {
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    line-height: 150%;
+    text-align: left;
+    background-color: #E5E2E2;
+    color: black;
+    padding: 0;
+    border: 1px solid #aaa;
+
+    margin: 0px 80px 0px 80px;
+    min-width: 70em;
+}
+
+a {
+    color: #CA7900;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2491CF;
+}
+
+pre {
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 0.95em;
+    letter-spacing: 0.015em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+}
+
+td.linenos pre {
+    padding: 0.5em 0;
+    border: 0;
+    background-color: transparent;
+    color: #aaa;
+}
+
+table.highlighttable {
+    margin-left: 0.5em;
+}
+
+table.highlighttable td {
+    padding: 0 0.5em 0 0.5em;
+}
+
+cite, code, tt {
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+}
+
+hr {
+    border: 1px solid #abc;
+    margin: 2em;
+}
+
+tt {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+tt.descname {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: 0;
+}
+
+tt.descclassname {
+    background-color: transparent;
+    border: 0;
+}
+
+tt.xref {
+    background-color: transparent;
+    font-weight: bold;
+    border: 0;
+}
+
+a tt {
+    background-color: transparent;
+    font-weight: bold;
+    border: 0;
+    color: #CA7900;
+}
+
+a tt:hover {
+    color: #2491CF;
+}
+
+dl {
+    margin-bottom: 15px;
+}
+
+dd p {
+    margin-top: 0px;
+}
+
+dd ul, dd table {
+    margin-bottom: 10px;
+}
+
+dd {
+    margin-top: 3px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+.refcount {
+    color: #060;
+}
+
+dt:target,
+.highlight {
+    background-color: #fbe54e;
+}
+
+dl.class, dl.function {
+    border-top: 2px solid #888;
+}
+
+dl.method, dl.attribute {
+    border-top: 1px solid #aaa;
+}
+
+dl.glossary dt {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+pre {
+    line-height: 120%;
+}
+
+pre a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.first {
+    margin-top: 0 !important;
+}
+
+div.document {
+    background-color: white;
+    text-align: left;
+    background-image: url(contents.png);
+    background-repeat: repeat-x;
+}
+
+/*
+div.documentwrapper {
+    width: 100%;
+}
+*/
+
+div.clearer {
+    clear: both;
+}
+
+div.related h3 {
+    display: none;
+}
+
+div.related ul {
+    background-image: url(navigation.png);
+    height: 2em;
+    list-style: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding-left: 10px;
+}
+
+div.related ul li {
+    margin: 0;
+    padding: 0;
+    height: 2em;
+    float: left;
+}
+
+div.related ul li.right {
+    float: right;
+    margin-right: 5px;
+}
+
+div.related ul li a {
+    margin: 0;
+    padding: 0 5px 0 5px;
+    line-height: 1.75em;
+    color: #EE9816;
+}
+
+div.related ul li a:hover {
+    color: #3CA8E7;
+}
+
+div.body {
+    margin: 0;
+    padding: 0.5em 20px 20px 20px;
+}
+
+div.bodywrapper {
+    margin: 0 240px 0 0;
+    border-right: 1px solid #ccc;
+}
+
+div.body a {
+    text-decoration: underline;
+}
+
+div.sphinxsidebar {
+    margin: 0;
+    padding: 0.5em 15px 15px 0;
+    width: 210px;
+    float: right;
+    text-align: left;
+    background-color: #2F83C8;
+}
+
+div.sphinxsidebar h4, div.sphinxsidebar h3 {
+    margin: 1em 0 0.5em 0;
+    font-size: 0.9em;
+    padding: 0.1em 0 0.1em 0.5em;
+    color: white;
+    border: 1px solid #86989B;
+    background-color: #AFC1C4;
+}
+
+div.sphinxsidebar ul {
+    padding-left: 1.5em;
+    margin-top: 7px;
+    list-style: none;
+    padding: 0;
+    line-height: 130%;
+}
+
+div.sphinxsidebar ul ul {
+    list-style: square;
+    margin-left: 20px;
+}
+
+p {
+    margin: 0.8em 0 0.5em 0;
+}
+
+p.rubric {
+    font-weight: bold;
+}
+
+h1 {
+    margin: 0;
+    padding: 0.7em 0 0.3em 0;
+    font-size: 1.5em;
+    color: #11557C;
+}
+
+h2 {
+    margin: 1.3em 0 0.2em 0;
+    font-size: 1.35em;
+    padding: 0;
+}
+
+h3 {
+    margin: 1em 0 -0.3em 0;
+    font-size: 1.2em;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: black!important;
+}
+
+h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor {
+    display: none;
+    margin: 0 0 0 0.3em;
+    padding: 0 0.2em 0 0.2em;
+    color: #aaa!important;
+}
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor,
+h5:hover a.anchor, h6:hover a.anchor {
+    display: inline;
+}
+
+h1 a.anchor:hover, h2 a.anchor:hover, h3 a.anchor:hover, h4 a.anchor:hover,
+h5 a.anchor:hover, h6 a.anchor:hover {
+    color: #777;
+    background-color: #eee;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 -0.5em 0 -0.5em;
+}
+
+table td, table th {
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+div.footer {
+    background-color: #E3EFF1;
+    color: #86989B;
+    padding: 3px 8px 3px 0;
+    clear: both;
+    font-size: 0.8em;
+    text-align: right;
+}
+
+div.footer a {
+    color: #86989B;
+    text-decoration: underline;
+}
+
+div.pagination {
+    margin-top: 2em;
+    padding-top: 0.5em;
+    border-top: 1px solid black;
+    text-align: center;
+}
+
+div.sphinxsidebar ul.toc {
+    margin: 1em 0 1em 0;
+    padding: 0 0 0 0.5em;
+    list-style: none;
+}
+
+div.sphinxsidebar ul.toc li {
+    margin: 0.5em 0 0.5em 0;
+    font-size: 0.9em;
+    line-height: 130%;
+}
+
+div.sphinxsidebar ul.toc li p {
+    margin: 0;
+    padding: 0;
+}
+
+div.sphinxsidebar ul.toc ul {
+    margin: 0.2em 0 0.2em 0;
+    padding: 0 0 0 1.8em;
+}
+
+div.sphinxsidebar ul.toc ul li {
+    padding: 0;
+}
+
+div.admonition, div.warning {
+    font-size: 0.9em;
+    margin: 1em 0 0 0;
+    border: 1px solid #86989B;
+    background-color: #f7f7f7;
+}
+
+div.admonition p, div.warning p {
+    margin: 0.5em 1em 0.5em 1em;
+    padding: 0;
+}
+
+div.admonition pre, div.warning pre {
+    margin: 0.4em 1em 0.4em 1em;
+}
+
+div.admonition p.admonition-title,
+div.warning p.admonition-title {
+    margin: 0;
+    padding: 0.1em 0 0.1em 0.5em;
+    color: white;
+    border-bottom: 1px solid #86989B;
+    font-weight: bold;
+    background-color: #AFC1C4;
+}
+
+div.warning {
+    border: 1px solid #940000;
+}
+
+div.warning p.admonition-title {
+    background-color: #CF0000;
+    border-bottom-color: #940000;
+}
+
+div.admonition ul, div.admonition ol,
+div.warning ul, div.warning ol {
+    margin: 0.1em 0.5em 0.5em 3em;
+    padding: 0;
+}
+
+div.versioninfo {
+    margin: 1em 0 0 0;
+    border: 1px solid #ccc;
+    background-color: #DDEAF0;
+    padding: 8px;
+    line-height: 1.3em;
+    font-size: 0.9em;
+}
+
+
+a.headerlink {
+    color: #c60f0f!important;
+    font-size: 1em;
+    margin-left: 6px;
+    padding: 0 4px 0 4px;
+    text-decoration: none!important;
+    visibility: hidden;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+
+a.headerlink:hover {
+    background-color: #ccc;
+    color: white!important;
+}
+
+table.indextable td {
+    text-align: left;
+    vertical-align: top;
+}
+
+table.indextable dl, table.indextable dd {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+table.indextable tr.pcap {
+    height: 10px;
+}
+
+table.indextable tr.cap {
+    margin-top: 10px;
+    background-color: #f2f2f2;
+}
+
+img.toggler {
+    margin-right: 3px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+img.inheritance {
+    border: 0px
+}
+
+form.pfform {
+    margin: 10px 0 20px 0;
+}
+
+table.contentstable {
+    width: 90%;
+}
+
+table.contentstable p.biglink {
+    line-height: 150%;
+}
+
+a.biglink {
+    font-size: 1.3em;
+}
+
+span.linkdescr {
+    font-style: italic;
+    padding-top: 5px;
+    font-size: 90%;
+}
+
+ul.search {
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+
+ul.search li {
+    padding: 5px 0 5px 20px;
+    background-image: url(file.png);
+    background-repeat: no-repeat;
+    background-position: 0 7px;
+}
+
+ul.search li a {
+    font-weight: bold;
+}
+
+ul.search li div.context {
+    color: #888;
+    margin: 2px 0 0 30px;
+    text-align: left;
+}
+
+ul.keywordmatches li.goodmatch a {
+    font-weight: bold;
+}
+
+div.sphinxsidebar h4, div.sphinxsidebar h3 {
+    background-color: #2F83C8;
+}
+
+h1 {
+    color: #2F83C8;
+}
+
+div.footer {
+    background-color: #CEC890;
+}
+
+
+div.body {
+    background-color: white;
+}
+
+div.highlight-python pre {
+white-space: pre-wrap; /* css-3 */
+white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+white-space: -pre-wrap; /* Opera 4-6 */
+white-space: -o-pre-wrap; /* Opera 7 */
+word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+p.graphviz img {
+    max-width: 100%;
+}
+
+th.field-name {
+    white-space: nowrap;
+}
+
+div.doc2.container tbody {
+    vertical-align: top;
+}
+
+div.doc2.container li {
+    list-style-type: none;
+}
+
+div.doc2.container p.first{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+div.doc2.container ul{
+    margin: 10px;
+}
+
+div.doc2 .reference.internal{
+    font-size: 14px;
+}
+
+    </style>
 
 
 <style type="text/css">
@@ -11726,7 +12289,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +12312,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11781,7 +12346,8 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11802,7 +12368,8 @@ XNATSource
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11862,7 +12429,8 @@ XNATSource
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11897,7 +12465,8 @@ XNATSource
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11939,7 +12508,8 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11962,7 +12532,8 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11971,7 +12542,8 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12000,7 +12572,8 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12009,7 +12582,8 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12034,7 +12608,8 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12056,7 +12631,81 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h3><p>Grab T1w images from both sessions - <code>ses-test</code> and <code>ses-retest</code> for <code>sub-01</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nipype</span> <span class="k">import</span> <span class="n">DataGrabber</span><span class="p">,</span> <span class="n">Node</span>
+
+<span class="c1"># Create DataGrabber node</span>
+<span class="n">ex1_dg</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">DataGrabber</span><span class="p">(</span><span class="n">infields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span> <span class="s1">&#39;ses_name&#39;</span><span class="p">],</span>
+                      <span class="n">outfields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;anat&#39;</span><span class="p">]),</span>
+          <span class="n">name</span><span class="o">=</span><span class="s1">&#39;datagrabber&#39;</span><span class="p">)</span>
+
+<span class="c1"># Location of the dataset folder</span>
+<span class="n">ex1_dg</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">base_directory</span> <span class="o">=</span> <span class="s1">&#39;/data/ds000114&#39;</span>
+
+<span class="c1"># Necessary default parameters</span>
+<span class="n">ex1_dg</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+<span class="n">ex1_dg</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">sort_filelist</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># specify the template</span>
+<span class="n">ex1_dg</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">template_args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;anat&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span> <span class="s1">&#39;ses_name&#39;</span><span class="p">]]}</span>
+<span class="n">ex1_dg</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">field_template</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;anat&#39;</span><span class="p">:</span> <span class="s1">&#39;sub-</span><span class="si">%02d</span><span class="s1">/ses-</span><span class="si">%s</span><span class="s1">/anat/*_T1w.nii.gz&#39;</span><span class="p">}</span>
+
+<span class="c1"># specify subject_id and ses_name you&#39;re interested in</span>
+<span class="n">ex1_dg</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">subject_id</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ex1_dg</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">ses_name</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;retest&quot;</span><span class="p">]</span>
+
+<span class="c1"># and run the node</span>
+<span class="n">ex1_res</span> <span class="o">=</span> <span class="n">ex1_dg</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can now check the output</span>
+<span class="n">ex1_res</span><span class="o">.</span><span class="n">outputs</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># write your solution here</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12108,7 +12757,8 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12130,14 +12780,15 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Perfect! But why is <code>SelectFiles</code> more flexible than <code>DataGrabber</code>? First, you perhaps noticed that with the {}-based string, we can reuse the same input (e.g. <code>subject_id</code>) multiple time in the same string, without feeding it multiple times into the template.</p>
-<p>Additionally, you can also select multiple files without the need of an iterable node. For example, let's assume we want to select both anatomical images (<code>'sub-01'</code> and <code>'sub-02'</code>) at once. We can do this by using the following file template:</p>
+<p>Additionally, you can also select multiple files without the need of an iterable node. For example, let's assume we want to select anatomical images for all subjects at once. We can do this by using the eildcard <code>*</code> in a template:</p>
 
-<pre><code>'sub-0[1,2]/anat/sub-0[1,2]_T1w.nii.gz'
+<pre><code>'sub-*/anat/sub-*_T1w.nii.gz'
 
 </code></pre>
 <p>Let's see how this works:</p>
@@ -12154,7 +12805,7 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">abspath</span> <span class="k">as</span> <span class="n">opap</span>
 
 <span class="c1"># String template with {}-based strings</span>
-<span class="n">templates</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;anat&#39;</span><span class="p">:</span> <span class="s1">&#39;sub-0[1,2]/ses-</span><span class="si">{ses_name}</span><span class="s1">/anat/sub-0[1,2]_ses-</span><span class="si">{ses_name}</span><span class="s1">_T1w.nii.gz&#39;</span><span class="p">}</span>
+<span class="n">templates</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;anat&#39;</span><span class="p">:</span> <span class="s1">&#39;sub-*/ses-</span><span class="si">{ses_name}</span><span class="s1">/anat/sub-*_ses-</span><span class="si">{ses_name}</span><span class="s1">_T1w.nii.gz&#39;</span><span class="p">}</span>
 
 
 <span class="c1"># Create SelectFiles node</span>
@@ -12176,18 +12827,72 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see, now <code>anat</code> contains two file paths, one for the first and one for the second subject. As a side node, you could have also gotten them same thing with the wild card <code>*</code>:</p>
+<p>As you can see, now <code>anat</code> contains ten file paths, T1w images for all ten subject.</p>
+<p>As a side node, you could also use <code>[]</code> string formating for some simple cases, e.g.</p>
 
-<pre><code>'sub-0*/ses-test/anat/sub-0*_ses-test_T1w.nii.gz'</code></pre>
+<pre><code>'sub-0[1,2]/ses-test/anat/sub-0[1,2]_ses-test_T1w.nii.gz'</code></pre>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h3><p>Use <code>SelectFile</code> to select again T1w images from both sessions - <code>ses-test</code> and <code>ses-retest</code> for <code>sub-01</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nipype</span> <span class="k">import</span> <span class="n">SelectFiles</span><span class="p">,</span> <span class="n">Node</span>
+
+<span class="c1"># String template with {}-based strings</span>
+<span class="n">templates</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;anat&#39;</span><span class="p">:</span> <span class="s1">&#39;sub-01/ses-*/anat/sub-01_ses-*_T1w.nii.gz&#39;</span><span class="p">}</span>
+             
+
+<span class="c1"># Create SelectFiles node</span>
+<span class="n">sf</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">SelectFiles</span><span class="p">(</span><span class="n">templates</span><span class="p">),</span>
+          <span class="n">name</span><span class="o">=</span><span class="s1">&#39;selectfiles&#39;</span><span class="p">)</span>
+
+<span class="c1"># Location of the dataset folder</span>
+<span class="n">sf</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">base_directory</span> <span class="o">=</span> <span class="s1">&#39;/data/ds000114&#39;</span>
+
+<span class="c1">#sf.inputs.ses_name = </span>
+
+<span class="n">sf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">outputs</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># write your solution here</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12196,7 +12901,8 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12218,7 +12924,8 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12247,7 +12954,8 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12274,7 +12982,8 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12297,7 +13006,8 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12321,7 +13031,8 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12344,7 +13055,8 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12366,7 +13078,8 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
