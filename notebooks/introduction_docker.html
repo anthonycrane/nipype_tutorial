@@ -11726,9 +11726,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11749,7 +11747,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11783,8 +11781,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11794,8 +11791,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11804,8 +11800,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11825,8 +11820,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11842,8 +11836,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11853,7 +11846,7 @@ div#notebook {
 <pre><code>docker run -it --rm -p 8888:8888 djarecka/nipype_tutorial jupyter notebook
 
 </code></pre>
-<p>However if you want use your version of notebooks, safes notebooks output locally or use you local data, you can also mount your local directories, e.g.:</p>
+<p>However, if you want to use your version of notebooks, safe notebook outputs locally or use youe local data, you can also mount your local directories, e.g.:</p>
 
 <pre><code>docker run -it --rm -v /path/to/nipype_tutorial/:/home/neuro/nipype_tutorial -v /path/to/data/:/data -v /path/to/output/:/output -p 8888:8888 djarecka/nipype_tutorial jupyter notebook
 
@@ -11864,7 +11857,7 @@ div#notebook {
 <li>The <code>--rm</code> flag tells docker that the container should automatically be removed after we close docker.</li>
 <li>The <code>-p</code> flag specifies which port we want to make available for docker.</li>
 <li>The <code>-v</code> flag tells docker which folders should be mount to make them accesible inside the container. Here: <code>/path/to/nipype_tutorial</code> is your local directory where you downloaded <a href="https://github.com/miykael/nipype_tutorial/">Nipype Tutorial repository</a>. <code>/path/to/data/</code> is a directory where you have dataset <a href="https://openfmri.org/dataset/ds000114/"><code>ds000114</code></a>, and <code>/path/to/output</code> can be an empty directory that will be used for output. The second part of the <code>-v</code> flag (here: <code>/home/neuro/nipype_tutorial</code>, <code>/data</code> or <code>/output</code>) specifies under which path the mounted folders can be found inside the container. <strong>Important</strong>: To use the <code>tutorial</code>, <code>data</code> and <code>output</code> folder, you first need to create them on your system!</li>
-<li><code>sdjarecka/nipype_tutorial</code> tells docker which image you want to run.</li>
+<li><code>djarecka/nipype_tutorial</code> tells docker which image you want to run.</li>
 <li><code>jupyter notebook</code> tells that you want to run directly the jupyter notebook command within the container. Alternatively, you can also use <code>jupyter-lab</code>, <code>bash</code> or <code>ipython</code>.</li>
 </ul>
 <p><strong>Note</strong> that when you run this docker image without any more specification, than it will prompt you a URL link in your terminal that you will need to copy paste into your browser to get to the notebooks.</p>
@@ -11872,8 +11865,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11884,8 +11876,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11913,8 +11904,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11928,8 +11918,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11938,8 +11927,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11950,8 +11938,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11962,8 +11949,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11976,7 +11962,7 @@ docker save -o nipype_tutorial.tar djarecka/nipype_tutorial
 docker load --input nipype_tutorial.tar
 
 </code></pre>
-<p>It might be possible that you run into administrator privileges isssues because you ran your docker command with <code>sudo</code>. This means that òther users don't have access rights to <code>nipype_tutorial.tar</code>. To avoid this, just change the rights of <code>nipype_tutorial.tar</code> with the command:</p>
+<p>It might be possible that you run into administrator privileges isssues because you ran your docker command with <code>sudo</code>. This means that other users don't have access rights to <code>nipype_tutorial.tar</code>. To avoid this, just change the rights of <code>nipype_tutorial.tar</code> with the command:</p>
 
 <pre><code>sudo chmod 777 nipype_tutorial.tar</code></pre>
 

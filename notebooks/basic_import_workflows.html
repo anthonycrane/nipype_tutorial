@@ -11726,9 +11726,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11749,7 +11747,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11783,8 +11781,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11811,8 +11808,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11826,7 +11822,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nipype.workflows.fmri.fsl.preprocess</span> <span class="k">import</span> <span class="n">create_susan_smooth</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">nipype.workflows.fmri.fsl.preprocess</span> <span class="kn">import</span> <span class="n">create_susan_smooth</span>
 <span class="n">smoothwf</span> <span class="o">=</span> <span class="n">create_susan_smooth</span><span class="p">()</span>
 </pre></div>
 
@@ -11835,8 +11831,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11859,8 +11854,7 @@ Outputs:
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11874,8 +11868,8 @@ Outputs:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>fslmaths /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz <span class="err">\</span>
-    <span class="o">-</span><span class="n">Tmean</span> <span class="o">-</span><span class="n">thrP</span> <span class="mi">50</span> <span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">test_task</span><span class="o">-</span><span class="n">fingerfootlips_mask</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>fslmaths /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz <span class="err">\</span>
+    <span class="o">-</span><span class="n">Tmean</span> <span class="o">-</span><span class="n">thrP</span> <span class="mi">50</span> <span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mo">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">test_task</span><span class="o">-</span><span class="n">fingerfootlips_mask</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
 </pre></div>
 
 </div>
@@ -11883,8 +11877,7 @@ Outputs:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11898,7 +11891,7 @@ Outputs:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">smoothwf</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">inputnode</span><span class="o">.</span><span class="n">in_files</span> <span class="o">=</span> <span class="s1">&#39;/data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz&#39;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">smoothwf</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">inputnode</span><span class="o">.</span><span class="n">in_files</span> <span class="o">=</span> <span class="s1">&#39;/data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz&#39;</span>
 <span class="n">smoothwf</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">inputnode</span><span class="o">.</span><span class="n">mask_file</span> <span class="o">=</span> <span class="s1">&#39;/output/sub-01_ses-test_task-fingerfootlips_mask.nii.gz&#39;</span>
 <span class="n">smoothwf</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">inputnode</span><span class="o">.</span><span class="n">fwhm</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">smoothwf</span><span class="o">.</span><span class="n">base_dir</span> <span class="o">=</span> <span class="s1">&#39;/output&#39;</span>
@@ -11909,8 +11902,7 @@ Outputs:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11924,10 +11916,10 @@ Outputs:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
-<span class="n">smoothwf</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">graph2use</span><span class="o">=</span><span class="s1">&#39;colored&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">simple_form</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;/output/susan_smooth/graph.dot.png&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">smoothwf</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">graph2use</span><span class="o">=</span><span class="s1">&#39;colored&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">simple_form</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;/output/susan_smooth/graph.png&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11935,8 +11927,7 @@ Outputs:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11950,7 +11941,7 @@ Outputs:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">smoothwf</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;MultiProc&#39;</span><span class="p">,</span> <span class="n">plugin_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;n_procs&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">smoothwf</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;MultiProc&#39;</span><span class="p">,</span> <span class="n">plugin_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;n_procs&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 </pre></div>
 
 </div>
@@ -11958,8 +11949,7 @@ Outputs:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11973,11 +11963,11 @@ Outputs:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>fslmaths /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz -Tmean fmean.nii.gz
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>fslmaths /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz -Tmean fmean.nii.gz
 <span class="o">!</span>fslmaths /output/susan_smooth/smooth/mapflow/_smooth0/sub-01_ses-test_task-fingerfootlips_bold_smooth.nii.gz <span class="err">\</span>
     <span class="o">-</span><span class="n">Tmean</span> <span class="n">smean</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
 
-<span class="kn">from</span> <span class="nn">nilearn</span> <span class="k">import</span> <span class="n">image</span><span class="p">,</span> <span class="n">plotting</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span><span class="p">,</span> <span class="n">plotting</span>
 <span class="n">plotting</span><span class="o">.</span><span class="n">plot_epi</span><span class="p">(</span>
     <span class="s1">&#39;fmean.nii.gz&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;mean (no smoothing)&quot;</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span>
     <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
@@ -11991,8 +11981,7 @@ Outputs:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12006,7 +11995,7 @@ Outputs:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">smoothwf</span><span class="o">.</span><span class="n">list_node_names</span><span class="p">())</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">smoothwf</span><span class="o">.</span><span class="n">list_node_names</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -12014,8 +12003,7 @@ Outputs:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12029,7 +12017,7 @@ Outputs:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">median</span> <span class="o">=</span> <span class="n">smoothwf</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">median</span> <span class="o">=</span> <span class="n">smoothwf</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12037,8 +12025,7 @@ Outputs:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12052,7 +12039,7 @@ Outputs:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">median</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">op_string</span> <span class="o">=</span> <span class="s1">&#39;-k </span><span class="si">%s</span><span class="s1"> -p 99&#39;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">median</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">op_string</span> <span class="o">=</span> <span class="s1">&#39;-k </span><span class="si">%s</span><span class="s1"> -p 99&#39;</span>
 </pre></div>
 
 </div>
@@ -12060,8 +12047,7 @@ Outputs:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12075,7 +12061,7 @@ Outputs:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">smoothwf</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;MultiProc&#39;</span><span class="p">,</span> <span class="n">plugin_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;n_procs&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">smoothwf</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;MultiProc&#39;</span><span class="p">,</span> <span class="n">plugin_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;n_procs&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 </pre></div>
 
 </div>
@@ -12083,8 +12069,7 @@ Outputs:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12098,10 +12083,10 @@ Outputs:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>fslmaths /output/susan_smooth/smooth/mapflow/_smooth0/sub-01_ses-test_task-fingerfootlips_bold_smooth.nii.gz <span class="err">\</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>fslmaths /output/susan_smooth/smooth/mapflow/_smooth0/sub-01_ses-test_task-fingerfootlips_bold_smooth.nii.gz <span class="err">\</span>
     <span class="o">-</span><span class="n">Tmean</span> <span class="n">mmean</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
 
-<span class="kn">from</span> <span class="nn">nilearn</span> <span class="k">import</span> <span class="n">image</span><span class="p">,</span> <span class="n">plotting</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span><span class="p">,</span> <span class="n">plotting</span>
 <span class="n">plotting</span><span class="o">.</span><span class="n">plot_epi</span><span class="p">(</span>
     <span class="s1">&#39;smean.nii.gz&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;mean (susan smooth)&quot;</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span>
     <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
