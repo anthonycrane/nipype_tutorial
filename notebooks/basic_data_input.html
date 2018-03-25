@@ -12055,6 +12055,44 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-18:57:04,952 workflow INFO:
+	 [Node] Setting-up &#34;datagrabber&#34; in &#34;/tmp/tmph53dysfe/datagrabber&#34;.
+180325-18:57:04,957 workflow INFO:
+	 [Node] Running &#34;datagrabber&#34; (&#34;nipype.interfaces.io.DataGrabber&#34;)
+180325-18:57:04,965 workflow INFO:
+	 [Node] Finished &#34;datagrabber&#34;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>
+anat = /data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
+func = /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12064,6 +12102,19 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># write your solution here</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -12100,6 +12151,29 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-18:57:05,2 workflow INFO:
+	 [Node] Setting-up &#34;datagrabber&#34; in &#34;/tmp/tmpi3m2h981/datagrabber&#34;.
+180325-18:57:05,7 workflow INFO:
+	 [Node] Running &#34;datagrabber&#34; (&#34;nipype.interfaces.io.DataGrabber&#34;)
+180325-18:57:05,12 workflow INFO:
+	 [Node] Finished &#34;datagrabber&#34;.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -12114,16 +12188,24 @@ func = /data/ds102/[subject_id]/ses-[ses_name]/func/sub-[subject_id]_ses-[ses_na
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>
+anat = [&#39;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-01/ses-retest/anat/sub-01_ses-retest_T1w.nii.gz&#39;]</pre>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># write your solution here</span>
-</pre></div>
 
 </div>
+
 </div>
 </div>
 
@@ -12201,6 +12283,44 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-18:57:05,40 workflow INFO:
+	 [Node] Setting-up &#34;selectfiles&#34; in &#34;/tmp/tmpgj96rnl9/selectfiles&#34;.
+180325-18:57:05,43 workflow INFO:
+	 [Node] Running &#34;selectfiles&#34; (&#34;nipype.interfaces.io.SelectFiles&#34;)
+180325-18:57:05,48 workflow INFO:
+	 [Node] Finished &#34;selectfiles&#34;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>
+anat = /data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz
+func = /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12223,7 +12343,6 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nipype</span> <span class="k">import</span> <span class="n">SelectFiles</span><span class="p">,</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">abspath</span> <span class="k">as</span> <span class="n">opap</span>
 
 <span class="c1"># String template with {}-based strings</span>
 <span class="n">templates</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;anat&#39;</span><span class="p">:</span> <span class="s1">&#39;sub-*/ses-</span><span class="si">{ses_name}</span><span class="s1">/anat/sub-*_ses-</span><span class="si">{ses_name}</span><span class="s1">_T1w.nii.gz&#39;</span><span class="p">}</span>
@@ -12247,13 +12366,50 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-18:57:05,63 workflow INFO:
+	 [Node] Setting-up &#34;selectfiles&#34; in &#34;/tmp/tmpi_lz_0yf/selectfiles&#34;.
+180325-18:57:05,68 workflow INFO:
+	 [Node] Running &#34;selectfiles&#34; (&#34;nipype.interfaces.io.SelectFiles&#34;)
+180325-18:57:05,77 workflow INFO:
+	 [Node] Finished &#34;selectfiles&#34;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>
+anat = [&#39;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-02/ses-test/anat/sub-02_ses-test_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-03/ses-test/anat/sub-03_ses-test_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-04/ses-test/anat/sub-04_ses-test_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-05/ses-test/anat/sub-05_ses-test_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-06/ses-test/anat/sub-06_ses-test_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-07/ses-test/anat/sub-07_ses-test_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-08/ses-test/anat/sub-08_ses-test_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-09/ses-test/anat/sub-09_ses-test_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-10/ses-test/anat/sub-10_ses-test_T1w.nii.gz&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see, now <code>anat</code> contains ten file paths, T1w images for all ten subject.</p>
-<p>As a side node, you could also use <code>[]</code> string formating for some simple cases, e.g.</p>
+<p>As a side node, you could also use <code>[]</code> string formating for some simple cases, e.g. for loading only subject 1 adn 2:</p>
 
 <pre><code>'sub-0[1,2]/ses-test/anat/sub-0[1,2]_ses-test_T1w.nii.gz'</code></pre>
 
@@ -12268,6 +12424,19 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># write your solution here</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -12296,16 +12465,40 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-18:57:05,95 workflow INFO:
+	 [Node] Setting-up &#34;selectfiles&#34; in &#34;/tmp/tmpd0zqxcr6/selectfiles&#34;.
+180325-18:57:05,99 workflow INFO:
+	 [Node] Running &#34;selectfiles&#34; (&#34;nipype.interfaces.io.SelectFiles&#34;)
+180325-18:57:05,104 workflow INFO:
+	 [Node] Finished &#34;selectfiles&#34;.
+</pre>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># write your solution here</span>
-</pre></div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>
+anat = [&#39;/data/ds000114/sub-01/ses-retest/anat/sub-01_ses-retest_T1w.nii.gz&#39;, &#39;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&#39;]</pre>
+</div>
 
 </div>
+
 </div>
 </div>
 
@@ -12333,7 +12526,7 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>datalad get -r -J4 /data/ds000114/derivatives/freesurfer/sub-01/
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>datalad get -r -J4 /data/ds000114/derivatives/freesurfer/sub-01
 </pre></div>
 
 </div>
@@ -12419,6 +12612,29 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-20:43:29,691 workflow INFO:
+	 [Node] Setting-up &#34;fssource&#34; in &#34;/tmp/tmpqe77y8n4/fssource&#34;.
+180325-20:43:29,696 workflow INFO:
+	 [Node] Running &#34;fssource&#34; (&#34;nipype.interfaces.io.FreeSurferSource&#34;)
+180325-20:43:29,745 workflow INFO:
+	 [Node] Finished &#34;fssource&#34;.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12435,11 +12651,31 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;aparc_aseg: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">result</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">aparc_aseg</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;brainmask: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">result</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">brainmask</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;inflated: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">result</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">inflated</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>aparc_aseg: [&#39;/data/ds000114/derivatives/freesurfer/sub-01/mri/aparc+aseg.mgz&#39;, &#39;/data/ds000114/derivatives/freesurfer/sub-01/mri/aparc.a2009s+aseg.mgz&#39;, &#39;/data/ds000114/derivatives/freesurfer/sub-01/mri/aparc.dktatlas+aseg.mgz&#39;]
+
+inflated: [&#39;/data/ds000114/derivatives/freesurfer/sub-01/surf/rh.inflated&#39;, &#39;/data/ds000114/derivatives/freesurfer/sub-01/surf/lh.inflated&#39;]
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12466,6 +12702,29 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-20:43:29,765 workflow INFO:
+	 [Node] Setting-up &#34;fssource&#34; in &#34;/tmp/tmpqe77y8n4/fssource&#34;.
+180325-20:43:29,770 workflow INFO:
+	 [Node] Running &#34;fssource&#34; (&#34;nipype.interfaces.io.FreeSurferSource&#34;)
+180325-20:43:29,804 workflow INFO:
+	 [Node] Finished &#34;fssource&#34;.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12485,6 +12744,26 @@ func = /data/ds000114/sub-{subject_id}/ses-{ses_name}/func/ \
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;/data/ds000114/derivatives/freesurfer/sub-01/surf/lh.inflated&#39;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 

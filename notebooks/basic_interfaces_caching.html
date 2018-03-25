@@ -11857,12 +11857,49 @@ mkdir -p /output/workingdir_mem
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bet_mem</span><span class="p">(</span><span class="n">in_file</span><span class="o">=</span><span class="s2">&quot;/data/ds000114/sub-02/ses-test/anat/sub-02_ses-test_T1w.nii.gz&quot;</span><span class="p">,</span>
-        <span class="n">out_file</span><span class="o">=</span><span class="s2">&quot;/output/sub-02_T1w_brain.nii.gz&quot;</span><span class="p">,</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bet_mem</span><span class="p">(</span><span class="n">in_file</span><span class="o">=</span><span class="s2">&quot;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&quot;</span><span class="p">,</span>
+        <span class="n">out_file</span><span class="o">=</span><span class="s2">&quot;/output/sub-01_T1w_brain.nii.gz&quot;</span><span class="p">,</span>
         <span class="n">mask</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-18:59:04,670 workflow INFO:
+	 [Node] Setting-up &#34;0f22480a769aa45b0b5baf7a2ed603e2&#34; in &#34;/output/workingdir_mem/nipype_mem/nipype-interfaces-fsl-preprocess-BET/0f22480a769aa45b0b5baf7a2ed603e2&#34;.
+180325-18:59:04,677 workflow INFO:
+	 [Node] Running &#34;0f22480a769aa45b0b5baf7a2ed603e2&#34; (&#34;nipype.interfaces.fsl.preprocess.BET&#34;), a CommandLine Interface with command:
+bet /data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz /output/sub-01_T1w_brain.nii.gz -m
+180325-18:59:09,180 workflow INFO:
+	 [Node] Finished &#34;0f22480a769aa45b0b5baf7a2ed603e2&#34;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;nipype.interfaces.base.support.InterfaceResult at 0x7f82377976d8&gt;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -11881,10 +11918,31 @@ mkdir -p /output/workingdir_mem
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> ls -l /output/workingdir_mem/nipype_mem
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> ls -lh /output/workingdir_mem/nipype_mem
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>total 12K
+drwxr-xr-x 3 neuro users 4.0K Mar 25 18:56 log.2018
+-rw-r--r-- 1 neuro users  280 Mar 25 18:59 log.current
+drwxr-xr-x 3 neuro users 4.0K Mar 25 18:59 nipype-interfaces-fsl-preprocess-BET
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -11903,12 +11961,48 @@ mkdir -p /output/workingdir_mem
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bet_mem</span><span class="p">(</span><span class="n">in_file</span><span class="o">=</span><span class="s2">&quot;/data/ds000114/sub-02/ses-test/anat/sub-02_ses-test_T1w.nii.gz&quot;</span><span class="p">,</span>
-        <span class="n">out_file</span><span class="o">=</span><span class="s2">&quot;/output/sub-02_T1w_brain.nii.gz&quot;</span><span class="p">,</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bet_mem</span><span class="p">(</span><span class="n">in_file</span><span class="o">=</span><span class="s2">&quot;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&quot;</span><span class="p">,</span>
+        <span class="n">out_file</span><span class="o">=</span><span class="s2">&quot;/output/sub-01_T1w_brain.nii.gz&quot;</span><span class="p">,</span>
         <span class="n">mask</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-18:59:09,844 workflow INFO:
+	 [Node] Setting-up &#34;0f22480a769aa45b0b5baf7a2ed603e2&#34; in &#34;/output/workingdir_mem/nipype_mem/nipype-interfaces-fsl-preprocess-BET/0f22480a769aa45b0b5baf7a2ed603e2&#34;.
+180325-18:59:09,847 workflow INFO:
+	 [Node] Cached &#34;0f22480a769aa45b0b5baf7a2ed603e2&#34; - collecting precomputed outputs
+180325-18:59:09,852 workflow INFO:
+	 [Node] &#34;0f22480a769aa45b0b5baf7a2ed603e2&#34; found cached.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;nipype.interfaces.base.support.InterfaceResult at 0x7f81f8324668&gt;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -11929,12 +12023,48 @@ mkdir -p /output/workingdir_mem
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mem</span><span class="o">.</span><span class="n">clear_runs_since</span><span class="p">()</span>
-<span class="n">bet_mem</span><span class="p">(</span><span class="n">in_file</span><span class="o">=</span><span class="s2">&quot;/data/ds000114/sub-02/ses-test/anat/sub-02_ses-test_T1w.nii.gz&quot;</span><span class="p">,</span>
-        <span class="n">out_file</span><span class="o">=</span><span class="s2">&quot;/output/sub-02_T1w_brain.nii.gz&quot;</span><span class="p">,</span>
+<span class="n">bet_mem</span><span class="p">(</span><span class="n">in_file</span><span class="o">=</span><span class="s2">&quot;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&quot;</span><span class="p">,</span>
+        <span class="n">out_file</span><span class="o">=</span><span class="s2">&quot;/output/sub-01_T1w_brain.nii.gz&quot;</span><span class="p">,</span>
         <span class="n">mask</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-18:59:09,866 workflow INFO:
+	 [Node] Setting-up &#34;0f22480a769aa45b0b5baf7a2ed603e2&#34; in &#34;/output/workingdir_mem/nipype_mem/nipype-interfaces-fsl-preprocess-BET/0f22480a769aa45b0b5baf7a2ed603e2&#34;.
+180325-18:59:09,871 workflow INFO:
+	 [Node] Cached &#34;0f22480a769aa45b0b5baf7a2ed603e2&#34; - collecting precomputed outputs
+180325-18:59:09,872 workflow INFO:
+	 [Node] &#34;0f22480a769aa45b0b5baf7a2ed603e2&#34; found cached.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;nipype.interfaces.base.support.InterfaceResult at 0x7f81f8324550&gt;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -11957,6 +12087,24 @@ mkdir -p /output/workingdir_mem
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>removing directory: /output/workingdir_mem/nipype_mem/nipype-interfaces-fsl-preprocess-BET
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

@@ -11921,6 +11921,60 @@ XNATSink
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-18:58:07,842 workflow INFO:
+	 Workflow preprocWF settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
+180325-18:58:07,850 workflow INFO:
+	 Running serially.
+180325-18:58:07,853 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.selectfiles&#34; in &#34;/output/working_dir/preprocWF/selectfiles&#34;.
+180325-18:58:07,859 workflow INFO:
+	 [Node] Running &#34;selectfiles&#34; (&#34;nipype.interfaces.io.SelectFiles&#34;)
+180325-18:58:07,868 workflow INFO:
+	 [Node] Finished &#34;preprocWF.selectfiles&#34;.
+180325-18:58:07,875 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.mcflirt&#34; in &#34;/output/working_dir/preprocWF/mcflirt&#34;.
+180325-18:58:07,882 workflow INFO:
+	 [Node] Running &#34;mcflirt&#34; (&#34;nipype.interfaces.fsl.preprocess.MCFLIRT&#34;), a CommandLine Interface with command:
+mcflirt -in /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz -meanvol -out /home/neuro/nipype_tutorial/notebooks/sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz -plots
+180325-18:59:26,492 workflow INFO:
+	 [Node] Finished &#34;preprocWF.mcflirt&#34;.
+180325-18:59:26,493 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.smooth&#34; in &#34;/output/working_dir/preprocWF/smooth&#34;.
+180325-18:59:26,498 workflow INFO:
+	 [Node] Running &#34;smooth&#34; (&#34;nipype.interfaces.fsl.maths.IsotropicSmooth&#34;), a CommandLine Interface with command:
+fslmaths /output/working_dir/preprocWF/mcflirt/sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz -s 1.69864 /home/neuro/nipype_tutorial/notebooks/sub-01_ses-test_task-fingerfootlips_bold_mcf_smooth.nii.gz
+180325-18:59:34,631 workflow INFO:
+	 [Node] Finished &#34;preprocWF.smooth&#34;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;networkx.classes.digraph.DiGraph at 0x7fb6f633d128&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -11940,6 +11994,55 @@ XNATSink
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/output/working_dir/preprocWF
+├── d3.js
+├── graph1.json
+├── graph.json
+├── index.html
+├── mcflirt
+│   ├── _0xd181279ed04fee0ae948cfaea9253ef3.json
+│   ├── command.txt
+│   ├── _inputs.pklz
+│   ├── _node.pklz
+│   ├── _report
+│   │   └── report.rst
+│   ├── result_mcflirt.pklz
+│   └── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz
+├── selectfiles
+│   ├── _0x8be4cb43842af73f06e36ceafabda572.json
+│   ├── _inputs.pklz
+│   ├── _node.pklz
+│   ├── _report
+│   │   └── report.rst
+│   └── result_selectfiles.pklz
+└── smooth
+    ├── _0xf0e369a33963d262586b888a1ba8786b.json
+    ├── command.txt
+    ├── _inputs.pklz
+    ├── _node.pklz
+    ├── _report
+    │   └── report.rst
+    ├── result_smooth.pklz
+    └── sub-01_ses-test_task-fingerfootlips_bold_mcf_smooth.nii.gz
+
+6 directories, 23 files
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -11988,6 +12091,70 @@ XNATSink
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-18:59:35,354 workflow INFO:
+	 Workflow preprocWF settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
+180325-18:59:35,362 workflow INFO:
+	 Running serially.
+180325-18:59:35,363 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.selectfiles&#34; in &#34;/output/working_dir/preprocWF/selectfiles&#34;.
+180325-18:59:35,368 workflow INFO:
+	 [Node] Running &#34;selectfiles&#34; (&#34;nipype.interfaces.io.SelectFiles&#34;)
+180325-18:59:35,372 workflow INFO:
+	 [Node] Finished &#34;preprocWF.selectfiles&#34;.
+180325-18:59:35,373 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.mcflirt&#34; in &#34;/output/working_dir/preprocWF/mcflirt&#34;.
+180325-18:59:35,375 workflow INFO:
+	 [Node] Outdated cache found for &#34;preprocWF.mcflirt&#34;.
+180325-18:59:35,383 workflow INFO:
+	 [Node] Running &#34;mcflirt&#34; (&#34;nipype.interfaces.fsl.preprocess.MCFLIRT&#34;), a CommandLine Interface with command:
+mcflirt -in /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz -meanvol -out /home/neuro/nipype_tutorial/notebooks/sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz -plots
+180325-19:00:53,555 workflow INFO:
+	 [Node] Finished &#34;preprocWF.mcflirt&#34;.
+180325-19:00:53,556 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.smooth&#34; in &#34;/output/working_dir/preprocWF/smooth&#34;.
+180325-19:00:53,559 workflow INFO:
+	 [Node] Outdated cache found for &#34;preprocWF.smooth&#34;.
+180325-19:00:53,575 workflow INFO:
+	 [Node] Running &#34;smooth&#34; (&#34;nipype.interfaces.fsl.maths.IsotropicSmooth&#34;), a CommandLine Interface with command:
+fslmaths /output/working_dir/preprocWF/mcflirt/sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz -s 1.69864 /home/neuro/nipype_tutorial/notebooks/sub-01_ses-test_task-fingerfootlips_bold_mcf_smooth.nii.gz
+180325-19:01:00,548 workflow INFO:
+	 [Node] Finished &#34;preprocWF.smooth&#34;.
+180325-19:01:00,549 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.sinker&#34; in &#34;/output/working_dir/preprocWF/sinker&#34;.
+180325-19:01:00,558 workflow INFO:
+	 [Node] Running &#34;sinker&#34; (&#34;nipype.interfaces.io.DataSink&#34;)
+180325-19:01:00,564 workflow INFO:
+	 [Node] Finished &#34;preprocWF.sinker&#34;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;networkx.classes.digraph.DiGraph at 0x7fb7300573c8&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12007,6 +12174,32 @@ XNATSink
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/output/working_dir/preprocWF_output
+├── in_file
+│   └── sub-01_ses-test_task-fingerfootlips_bold_mcf_smooth.nii.gz
+├── mean_img
+│   └── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz_mean_reg.nii.gz
+└── par_file
+    └── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz.par
+
+3 directories, 3 files
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12037,6 +12230,66 @@ XNATSink
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-19:01:01,193 workflow INFO:
+	 Workflow preprocWF settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
+180325-19:01:01,205 workflow INFO:
+	 Running serially.
+180325-19:01:01,206 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.selectfiles&#34; in &#34;/output/working_dir/preprocWF/selectfiles&#34;.
+180325-19:01:01,211 workflow INFO:
+	 [Node] Running &#34;selectfiles&#34; (&#34;nipype.interfaces.io.SelectFiles&#34;)
+180325-19:01:01,216 workflow INFO:
+	 [Node] Finished &#34;preprocWF.selectfiles&#34;.
+180325-19:01:01,217 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.mcflirt&#34; in &#34;/output/working_dir/preprocWF/mcflirt&#34;.
+180325-19:01:01,221 workflow INFO:
+	 [Node] Cached &#34;preprocWF.mcflirt&#34; - collecting precomputed outputs
+180325-19:01:01,221 workflow INFO:
+	 [Node] &#34;preprocWF.mcflirt&#34; found cached.
+180325-19:01:01,222 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.smooth&#34; in &#34;/output/working_dir/preprocWF/smooth&#34;.
+180325-19:01:01,226 workflow INFO:
+	 [Node] Cached &#34;preprocWF.smooth&#34; - collecting precomputed outputs
+180325-19:01:01,227 workflow INFO:
+	 [Node] &#34;preprocWF.smooth&#34; found cached.
+180325-19:01:01,228 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.sinker&#34; in &#34;/output/working_dir/preprocWF/sinker&#34;.
+180325-19:01:01,235 workflow INFO:
+	 [Node] Outdated cache found for &#34;preprocWF.sinker&#34;.
+180325-19:01:01,240 workflow INFO:
+	 [Node] Running &#34;sinker&#34; (&#34;nipype.interfaces.io.DataSink&#34;)
+180325-19:01:01,246 workflow INFO:
+	 [Node] Finished &#34;preprocWF.sinker&#34;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;networkx.classes.digraph.DiGraph at 0x7fb730057390&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12056,6 +12309,36 @@ XNATSink
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/output/working_dir/preprocWF_output
+├── in_file
+│   └── sub-01_ses-test_task-fingerfootlips_bold_mcf_smooth.nii.gz
+├── mean_img
+│   └── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz_mean_reg.nii.gz
+├── par_file
+│   └── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz.par
+└── preproc
+    ├── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz_mean_reg.nii.gz
+    ├── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz.par
+    └── sub-01_ses-test_task-fingerfootlips_bold_mcf_smooth.nii.gz
+
+4 directories, 6 files
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12093,6 +12376,78 @@ XNATSink
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-19:01:01,858 workflow INFO:
+	 Workflow preprocWF settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
+180325-19:01:01,866 workflow INFO:
+	 Running serially.
+180325-19:01:01,866 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.selectfiles&#34; in &#34;/output/working_dir/preprocWF/selectfiles&#34;.
+180325-19:01:01,871 workflow INFO:
+	 [Node] Running &#34;selectfiles&#34; (&#34;nipype.interfaces.io.SelectFiles&#34;)
+180325-19:01:01,876 workflow INFO:
+	 [Node] Finished &#34;preprocWF.selectfiles&#34;.
+180325-19:01:01,876 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.mcflirt&#34; in &#34;/output/working_dir/preprocWF/mcflirt&#34;.
+180325-19:01:01,880 workflow INFO:
+	 [Node] Cached &#34;preprocWF.mcflirt&#34; - collecting precomputed outputs
+180325-19:01:01,880 workflow INFO:
+	 [Node] &#34;preprocWF.mcflirt&#34; found cached.
+180325-19:01:01,881 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.smooth&#34; in &#34;/output/working_dir/preprocWF/smooth&#34;.
+180325-19:01:01,884 workflow INFO:
+	 [Node] Cached &#34;preprocWF.smooth&#34; - collecting precomputed outputs
+180325-19:01:01,885 workflow INFO:
+	 [Node] &#34;preprocWF.smooth&#34; found cached.
+180325-19:01:01,886 workflow INFO:
+	 [Node] Setting-up &#34;preprocWF.sinker&#34; in &#34;/output/working_dir/preprocWF/sinker&#34;.
+180325-19:01:01,891 workflow INFO:
+	 [Node] Outdated cache found for &#34;preprocWF.sinker&#34;.
+180325-19:01:01,897 workflow INFO:
+	 [Node] Running &#34;sinker&#34; (&#34;nipype.interfaces.io.DataSink&#34;)
+180325-19:01:01,898 interface INFO:
+	 sub: /output/working_dir/preprocWF_output/in_file/sub-01_ses-test_task-fingerfootlips_bold_mcf_smooth.nii.gz -&gt; /output/working_dir/preprocWF_output/in_file/sub-01_smooth.nii.gz
+180325-19:01:01,900 interface INFO:
+	 sub: /output/working_dir/preprocWF_output/preproc/sub-01_ses-test_task-fingerfootlips_bold_mcf_smooth.nii.gz -&gt; /output/working_dir/preprocWF_output/preproc/sub-01_smooth.nii.gz
+180325-19:01:01,902 interface INFO:
+	 sub: /output/working_dir/preprocWF_output/mean_img/sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz_mean_reg.nii.gz -&gt; /output/working_dir/preprocWF_output/mean_img/sub-01_mean.nii.gz
+180325-19:01:01,904 interface INFO:
+	 sub: /output/working_dir/preprocWF_output/par_file/sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz.par -&gt; /output/working_dir/preprocWF_output/par_file/sub-01.par
+180325-19:01:01,905 interface INFO:
+	 sub: /output/working_dir/preprocWF_output/preproc/sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz_mean_reg.nii.gz -&gt; /output/working_dir/preprocWF_output/preproc/sub-01_mean.nii.gz
+180325-19:01:01,907 interface INFO:
+	 sub: /output/working_dir/preprocWF_output/preproc/sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz.par -&gt; /output/working_dir/preprocWF_output/preproc/sub-01.par
+180325-19:01:01,911 workflow INFO:
+	 [Node] Finished &#34;preprocWF.sinker&#34;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;networkx.classes.digraph.DiGraph at 0x7fb6f5acde10&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12112,6 +12467,42 @@ XNATSink
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/output/working_dir/preprocWF_output
+├── in_file
+│   ├── sub-01_ses-test_task-fingerfootlips_bold_mcf_smooth.nii.gz
+│   └── sub-01_smooth.nii.gz
+├── mean_img
+│   ├── sub-01_mean.nii.gz
+│   └── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz_mean_reg.nii.gz
+├── par_file
+│   ├── sub-01.par
+│   └── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz.par
+└── preproc
+    ├── sub-01_mean.nii.gz
+    ├── sub-01.par
+    ├── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz_mean_reg.nii.gz
+    ├── sub-01_ses-test_task-fingerfootlips_bold_mcf.nii.gz.par
+    ├── sub-01_ses-test_task-fingerfootlips_bold_mcf_smooth.nii.gz
+    └── sub-01_smooth.nii.gz
+
+4 directories, 12 files
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12139,13 +12530,26 @@ XNATSink
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># write your solution here</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nipype</span> <span class="k">import</span> <span class="n">Node</span><span class="p">,</span> <span class="n">Workflow</span>
 <span class="kn">from</span> <span class="nn">nipype.interfaces.io</span> <span class="k">import</span> <span class="n">DataSink</span>
 <span class="kn">from</span> <span class="nn">nipype.interfaces.fsl</span> <span class="k">import</span> <span class="n">BET</span>
 
 <span class="c1"># Skullstrip process</span>
 <span class="n">ex1_skullstrip</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">BET</span><span class="p">(</span><span class="n">mask</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ex1_skullstrip&quot;</span><span class="p">)</span>
-<span class="n">ex1_skullstrip</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">in_file</span> <span class="o">=</span> <span class="s2">&quot;/data/ds000114/sub-02/ses-test/anat/sub-02_ses-test_T1w.nii.gz&quot;</span>
+<span class="n">ex1_skullstrip</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">in_file</span> <span class="o">=</span> <span class="s2">&quot;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&quot;</span>
 </pre></div>
 
 </div>
@@ -12187,6 +12591,53 @@ XNATSink
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-19:01:02,593 workflow INFO:
+	 Workflow ex1 settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
+180325-19:01:02,599 workflow INFO:
+	 Running serially.
+180325-19:01:02,600 workflow INFO:
+	 [Node] Setting-up &#34;ex1.ex1_skullstrip&#34; in &#34;/output/working_dir/ex1/ex1_skullstrip&#34;.
+180325-19:01:02,604 workflow INFO:
+	 [Node] Running &#34;ex1_skullstrip&#34; (&#34;nipype.interfaces.fsl.preprocess.BET&#34;), a CommandLine Interface with command:
+bet /data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz /home/neuro/nipype_tutorial/notebooks/sub-01_ses-test_T1w_brain.nii.gz -m
+180325-19:01:06,933 workflow INFO:
+	 [Node] Finished &#34;ex1.ex1_skullstrip&#34;.
+180325-19:01:06,934 workflow INFO:
+	 [Node] Setting-up &#34;ex1.ex1_sinker&#34; in &#34;/output/working_dir/ex1/ex1_sinker&#34;.
+180325-19:01:06,941 workflow INFO:
+	 [Node] Running &#34;ex1_sinker&#34; (&#34;nipype.interfaces.io.DataSink&#34;)
+180325-19:01:06,947 workflow INFO:
+	 [Node] Finished &#34;ex1.ex1_sinker&#34;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;networkx.classes.digraph.DiGraph at 0x7fb6f5aec940&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -12198,6 +12649,30 @@ XNATSink
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/output/working_dir/ex1_output
+├── mask_file
+│   └── sub-01_ses-test_T1w_brain_mask.nii.gz
+└── out_file
+    └── sub-01_ses-test_T1w_brain.nii.gz
+
+2 directories, 2 files
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12218,6 +12693,54 @@ XNATSink
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>180325-19:01:07,611 workflow INFO:
+	 Workflow ex1 settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
+180325-19:01:07,622 workflow INFO:
+	 Running serially.
+180325-19:01:07,623 workflow INFO:
+	 [Node] Setting-up &#34;ex1.ex1_skullstrip&#34; in &#34;/output/working_dir/ex1/ex1_skullstrip&#34;.
+180325-19:01:07,626 workflow INFO:
+	 [Node] Cached &#34;ex1.ex1_skullstrip&#34; - collecting precomputed outputs
+180325-19:01:07,627 workflow INFO:
+	 [Node] &#34;ex1.ex1_skullstrip&#34; found cached.
+180325-19:01:07,628 workflow INFO:
+	 [Node] Setting-up &#34;ex1.ex1_sinker&#34; in &#34;/output/working_dir/ex1/ex1_sinker&#34;.
+180325-19:01:07,632 workflow INFO:
+	 [Node] Outdated cache found for &#34;ex1.ex1_sinker&#34;.
+180325-19:01:07,638 workflow INFO:
+	 [Node] Running &#34;ex1_sinker&#34; (&#34;nipype.interfaces.io.DataSink&#34;)
+180325-19:01:07,643 workflow INFO:
+	 [Node] Finished &#34;ex1.ex1_sinker&#34;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;networkx.classes.digraph.DiGraph at 0x7fb6f5acdc50&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -12232,16 +12755,30 @@ XNATSink
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># write your solution here</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/output/working_dir/ex1_output
+├── bet
+│   ├── sub-01_ses-test_T1w_brain_mask.nii.gz
+│   └── sub-01_ses-test_T1w_brain.nii.gz
+├── mask_file
+│   └── sub-01_ses-test_T1w_brain_mask.nii.gz
+└── out_file
+    └── sub-01_ses-test_T1w_brain.nii.gz
+
+3 directories, 4 files
+</pre>
 </div>
+</div>
+
 </div>
 </div>
 

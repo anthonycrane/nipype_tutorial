@@ -11848,7 +11848,7 @@ datalad install -r ///workshops/nih-2017/ds000114
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In order to download data you can use <code>datalad get foldername</code> command, to download all files in the folder <code>foldername</code>. For this tutorial we only want to download part of the dataset, i.e. the anatomial and the first functional images:</p>
+<p>In order to download data you can use <code>datalad get foldername</code> command, to download all files in the folder <code>foldername</code>. For this tutorial we only want to download part of the dataset, i.e. the anatomial and the functional <code>fingerfootlips</code> images:</p>
 
 </div>
 </div>
@@ -11860,10 +11860,8 @@ datalad install -r ///workshops/nih-2017/ds000114
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
 <span class="nb">cd</span> /data/ds000114
-datalad get sub-*/ses-test/anat
-datalad get sub-*/ses-test/func/*fingerfootlips*
-datalad get derivatives/fmriprep/sub-*/anat
-datalad get derivatives/fmriprep/sub-*/ses-test/func/*fingerfootlips*
+datalad get -J4 /data/ds000114/derivatives/fmriprep/sub-*/anat/*preproc.nii.gz <span class="se">\</span>
+                /data/ds000114/sub-*/ses-test/func/*fingerfootlips*
 </pre></div>
 
 </div>
@@ -11897,7 +11895,7 @@ datalad get derivatives/fmriprep/sub-*/ses-test/func/*fingerfootlips*
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can, for every subject we have one anatomical T1w image, five functional images and one diffusion weighted image. In addition, we have directory with derivatives.</p>
+<p>As you can, for every subject we have one anatomical T1w image, five functional images and one diffusion weighted image.</p>
 <p><strong>Note</strong>: If you used <code>datalad</code> or <code>git annex</code> to get the dataset, you can see symlinks for the image files.</p>
 
 </div>
@@ -11914,6 +11912,21 @@ datalad get derivatives/fmriprep/sub-*/ses-test/func/*fingerfootlips*
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nb">cd</span> /data/ds000114
+datalad get /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-linebisection_events.tsv
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
