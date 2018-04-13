@@ -125,6 +125,11 @@ RUN conda create -y -q --name neuro python=3.6 \
     && sync \
     && sed -i '$isource activate neuro' $ND_ENTRYPOINT
 
+#--------------------
+# Download BIDS tools
+#--------------------
+RUN pip install dcm2bids
+
 # User-defined BASH instruction
 RUN bash -c "source activate neuro && jupyter nbextension enable exercise2/main && jupyter nbextension enable spellchecker/main"
 
