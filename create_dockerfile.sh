@@ -20,6 +20,7 @@ docker run --rm kaczmarj/neurodocker:master generate -b neurodebian:stretch-non-
 --run 'mkdir -p ~/.jupyter && echo c.NotebookApp.ip = \"0.0.0.0\" > ~/.jupyter/jupyter_notebook_config.py' \
 --user=root \
 --run 'mkdir /data && chmod 777 /data && chmod a+s /data' \
+--run 'mkdir /code && chmod 777 /code && chmod a+s /code' \
 --run 'mkdir /output && chmod 777 /output && chmod a+s /output' \
 --run 'pip install Snakemake dcm2bids' \
 --user=neuro \
