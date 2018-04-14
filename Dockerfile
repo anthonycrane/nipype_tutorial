@@ -5,7 +5,7 @@
 # pull request on our GitHub repository:
 #     https://github.com/kaczmarj/neurodocker
 #
-# Timestamp: 2018-04-14 01:34:18
+# Timestamp: 2018-04-14 01:54:40
 
 FROM neurodebian:stretch-non-free
 
@@ -154,6 +154,9 @@ RUN mkdir /data && chmod 777 /data && chmod a+s /data
 # User-defined instruction
 RUN mkdir /output && chmod 777 /output && chmod a+s /output
 
+# User-defined instruction
+RUN pip install Snakemake dcm2bids
+
 USER neuro
 
 # User-defined BASH instruction
@@ -260,6 +263,10 @@ RUN echo '{ \
     \n      "mkdir /output && chmod 777 /output && chmod a+s /output" \
     \n    ], \
     \n    [ \
+    \n      "run", \
+    \n      "pip install Snakemake dcm2bids" \
+    \n    ], \
+    \n    [ \
     \n      "user", \
     \n      "neuro" \
     \n    ], \
@@ -301,6 +308,6 @@ RUN echo '{ \
     \n      ] \
     \n    ] \
     \n  ], \
-    \n  "generation_timestamp": "2018-04-14 01:34:18", \
+    \n  "generation_timestamp": "2018-04-14 01:54:40", \
     \n  "neurodocker_version": "0.3.2" \
     \n}' > /neurodocker/neurodocker_specs.json
