@@ -5,7 +5,7 @@
 # pull request on our GitHub repository:
 #     https://github.com/kaczmarj/neurodocker
 #
-# Timestamp: 2018-03-24 08:22:29
+# Timestamp: 2018-04-14 01:34:18
 
 FROM neurodebian:stretch-non-free
 
@@ -79,6 +79,21 @@ ENV MATLABCMD=/opt/mcr/v92/toolbox/matlab \
     FORCE_SPMMCR=1 \
     LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:/opt/mcr/v92/runtime/glnxa64:/opt/mcr/v92/bin/glnxa64:/opt/mcr/v92/sys/os/glnxa64:$LD_LIBRARY_PATH
 
+#------------------------
+# Install dcm2niix master
+#------------------------
+WORKDIR /tmp
+RUN deps='cmake g++ gcc git make pigz zlib1g-dev' \
+    && apt-get update -qq && apt-get install -yq --no-install-recommends $deps \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && mkdir dcm2niix \
+    && curl -sSL https://github.com/rordenlab/dcm2niix/tarball/master | tar xz -C dcm2niix --strip-components 1 \
+    && mkdir dcm2niix/build && cd dcm2niix/build \
+    && cmake .. && make \
+    && make install \
+    && rm -rf /tmp/*
+
 # Create new user: neuro
 RUN useradd --no-user-group --create-home --shell /bin/bash neuro
 USER neuro
@@ -125,11 +140,6 @@ RUN conda create -y -q --name neuro python=3.6 \
     && sync \
     && sed -i '$isource activate neuro' $ND_ENTRYPOINT
 
-#--------------------
-# Download BIDS tools
-#--------------------
-RUN pip install dcm2bids
-
 # User-defined BASH instruction
 RUN bash -c "source activate neuro && jupyter nbextension enable exercise2/main && jupyter nbextension enable spellchecker/main"
 
@@ -147,10 +157,7 @@ RUN mkdir /output && chmod 777 /output && chmod a+s /output
 USER neuro
 
 # User-defined BASH instruction
-RUN bash -c "source activate neuro && cd /data && datalad install -r ///workshops/nih-2017/ds000114 && cd ds000114 && datalad get -r sub-01/ses-test/anat sub-01/ses-test/func/*fingerfootlips*"
-
-# User-defined BASH instruction
-RUN bash -c "curl -L https://files.osf.io/v1/resources/fvuh8/providers/osfstorage/580705089ad5a101f17944a9 -o /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c.tar.gz && tar xf /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c.tar.gz -C /data/ds000114/derivatives/fmriprep/. && rm /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c.tar.gz && find /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c -type f -not -name ?mm_T1.nii.gz -not -name ?mm_brainmask.nii.gz -not -name ?mm_tpm*.nii.gz -delete"
+RUN bash -c "source activate neuro"
 
 COPY [".", "/home/neuro/nipype_tutorial"]
 
@@ -213,6 +220,12 @@ RUN echo '{ \
     \n      } \
     \n    ], \
     \n    [ \
+    \n      "dcm2niix", \
+    \n      { \
+    \n        "version": "master" \
+    \n      } \
+    \n    ], \
+    \n    [ \
     \n      "user", \
     \n      "neuro" \
     \n    ], \
@@ -252,11 +265,7 @@ RUN echo '{ \
     \n    ], \
     \n    [ \
     \n      "run_bash", \
-    \n      "source activate neuro && cd /data && datalad install -r ///workshops/nih-2017/ds000114 && cd ds000114 && datalad get -r sub-01/ses-test/anat sub-01/ses-test/func/*fingerfootlips*" \
-    \n    ], \
-    \n    [ \
-    \n      "run_bash", \
-    \n      "curl -L https://files.osf.io/v1/resources/fvuh8/providers/osfstorage/580705089ad5a101f17944a9 -o /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c.tar.gz && tar xf /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c.tar.gz -C /data/ds000114/derivatives/fmriprep/. && rm /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c.tar.gz && find /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c -type f -not -name ?mm_T1.nii.gz -not -name ?mm_brainmask.nii.gz -not -name ?mm_tpm*.nii.gz -delete" \
+    \n      "source activate neuro" \
     \n    ], \
     \n    [ \
     \n      "copy", \
@@ -292,6 +301,6 @@ RUN echo '{ \
     \n      ] \
     \n    ] \
     \n  ], \
-    \n  "generation_timestamp": "2018-03-24 08:22:29", \
+    \n  "generation_timestamp": "2018-04-14 01:34:18", \
     \n  "neurodocker_version": "0.3.2" \
     \n}' > /neurodocker/neurodocker_specs.json
