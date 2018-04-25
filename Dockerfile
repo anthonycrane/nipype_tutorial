@@ -5,7 +5,7 @@
 # pull request on our GitHub repository:
 #     https://github.com/kaczmarj/neurodocker
 #
-# Timestamp: 2018-04-14 01:59:44
+# Timestamp: 2018-04-24 02:44:48
 
 FROM neurodebian:stretch-non-free
 
@@ -79,8 +79,35 @@ ENV MATLABCMD=/opt/mcr/v92/toolbox/matlab \
     FORCE_SPMMCR=1 \
     LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:/opt/mcr/v92/runtime/glnxa64:/opt/mcr/v92/bin/glnxa64:/opt/mcr/v92/sys/os/glnxa64:$LD_LIBRARY_PATH
 
+#--------------------
+# Install AFNI latest
+#--------------------
+ENV PATH=/opt/afni:$PATH
+RUN apt-get update -qq && apt-get install -yq --no-install-recommends ed gsl-bin libglu1-mesa-dev libglib2.0-0 libglw1-mesa \
+    libgomp1 libjpeg62 libxm4 netpbm tcsh xfonts-base xvfb \
+    && libs_path=/usr/lib/x86_64-linux-gnu \
+    && if [ -f $libs_path/libgsl.so.19 ]; then \
+           ln $libs_path/libgsl.so.19 $libs_path/libgsl.so.0; \
+       fi \
+    && echo "Install libxp (not in all ubuntu/debian repositories)" \
+    && apt-get install -yq --no-install-recommends libxp6 \
+    || /bin/bash -c " \
+       curl --retry 5 -o /tmp/libxp6.deb -sSL http://mirrors.kernel.org/debian/pool/main/libx/libxp/libxp6_1.0.2-2_amd64.deb \
+       && dpkg -i /tmp/libxp6.deb && rm -f /tmp/libxp6.deb" \
+    && echo "Install libpng12 (not in all ubuntu/debian repositories" \
+    && apt-get install -yq --no-install-recommends libpng12-0 \
+    || /bin/bash -c " \
+       curl --retry 5 -o /tmp/libpng12.deb -sSL http://mirrors.kernel.org/debian/pool/main/libp/libpng/libpng12-0_1.2.49-1%2Bdeb7u2_amd64.deb \
+       && dpkg -i /tmp/libpng12.deb && rm -f /tmp/libpng12.deb" \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && echo "Downloading AFNI ..." \
+    && mkdir -p /opt/afni \
+    && curl -sSL --retry 5 https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz \
+    | tar zx -C /opt/afni --strip-components=1
+
 #------------------------
-# Install dcm2niix master
+# Install dcm2niix v1.0.20171215
 #------------------------
 WORKDIR /tmp
 RUN deps='cmake g++ gcc git make pigz zlib1g-dev' \
@@ -88,7 +115,7 @@ RUN deps='cmake g++ gcc git make pigz zlib1g-dev' \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && mkdir dcm2niix \
-    && curl -sSL https://github.com/rordenlab/dcm2niix/tarball/master | tar xz -C dcm2niix --strip-components 1 \
+    && curl -sSL https://github.com/rordenlab/dcm2niix/tarball/v1.0.20171215 | tar xz -C dcm2niix --strip-components 1 \
     && mkdir dcm2niix/build && cd dcm2niix/build \
     && cmake .. && make \
     && make install \
@@ -136,7 +163,9 @@ RUN conda create -y -q --name neuro python=3.6 \
                                        nilearn \
                                        datalad[full] \
                                        nipy \
-                                       duecredit" \
+                                       duecredit \
+                                       Snakemake \
+                                       dcm2bids" \
     && sync \
     && sed -i '$isource activate neuro' $ND_ENTRYPOINT
 
@@ -149,16 +178,13 @@ RUN mkdir -p ~/.jupyter && echo c.NotebookApp.ip = \"0.0.0.0\" > ~/.jupyter/jupy
 USER root
 
 # User-defined instruction
-RUN mkdir /data && chmod 777 /data && chmod a+s /data
+RUN mkdir /home/neuro/data && chmod 777 /home/neuro/data && chmod a+s /home/neuro/data
 
 # User-defined instruction
-RUN mkdir /code && chmod 777 /code && chmod a+s /code
+RUN mkdir /home/neuro/code && chmod 777 /home/neuro/code && chmod a+s /home/neuro/code
 
 # User-defined instruction
-RUN mkdir /output && chmod 777 /output && chmod a+s /output
-
-# User-defined instruction
-RUN pip install Snakemake dcm2bids
+RUN mkdir /home/neuro/output && chmod 777 /home/neuro/output && chmod a+s /home/neuro/output
 
 USER neuro
 
@@ -177,7 +203,7 @@ RUN bash -c "rm -rf /opt/conda/pkgs/*"
 
 USER neuro
 
-WORKDIR /home/neuro/nipype_tutorial
+WORKDIR /home/neuro/
 
 CMD ["jupyter-notebook"]
 
@@ -226,9 +252,15 @@ RUN echo '{ \
     \n      } \
     \n    ], \
     \n    [ \
+    \n      "afni", \
+    \n      { \
+    \n        "version": "latest" \
+    \n      } \
+    \n    ], \
+    \n    [ \
     \n      "dcm2niix", \
     \n      { \
-    \n        "version": "master" \
+    \n        "version": "v1.0.20171215" \
     \n      } \
     \n    ], \
     \n    [ \
@@ -240,7 +272,7 @@ RUN echo '{ \
     \n      { \
     \n        "miniconda_version": "4.3.31", \
     \n        "conda_install": "python=3.6 pytest jupyter jupyterlab jupyter_contrib_nbextensions traits pandas matplotlib scikit-learn scikit-image seaborn nbformat nb_conda", \
-    \n        "pip_install": "https://github.com/nipy/nipype/tarball/master https://github.com/INCF/pybids/tarball/master nilearn datalad[full] nipy duecredit", \
+    \n        "pip_install": "https://github.com/nipy/nipype/tarball/master https://github.com/INCF/pybids/tarball/master nilearn datalad[full] nipy duecredit Snakemake dcm2bids", \
     \n        "env_name": "neuro", \
     \n        "activate": true \
     \n      } \
@@ -259,19 +291,15 @@ RUN echo '{ \
     \n    ], \
     \n    [ \
     \n      "run", \
-    \n      "mkdir /data && chmod 777 /data && chmod a+s /data" \
+    \n      "mkdir /home/neuro/data && chmod 777 /home/neuro/data && chmod a+s /home/neuro/data" \
     \n    ], \
     \n    [ \
     \n      "run", \
-    \n      "mkdir /code && chmod 777 /code && chmod a+s /code" \
+    \n      "mkdir /home/neuro/code && chmod 777 /home/neuro/code && chmod a+s /home/neuro/code" \
     \n    ], \
     \n    [ \
     \n      "run", \
-    \n      "mkdir /output && chmod 777 /output && chmod a+s /output" \
-    \n    ], \
-    \n    [ \
-    \n      "run", \
-    \n      "pip install Snakemake dcm2bids" \
+    \n      "mkdir /home/neuro/output && chmod 777 /home/neuro/output && chmod a+s /home/neuro/output" \
     \n    ], \
     \n    [ \
     \n      "user", \
@@ -306,7 +334,7 @@ RUN echo '{ \
     \n    ], \
     \n    [ \
     \n      "workdir", \
-    \n      "/home/neuro/nipype_tutorial" \
+    \n      "/home/neuro/" \
     \n    ], \
     \n    [ \
     \n      "cmd", \
@@ -315,6 +343,6 @@ RUN echo '{ \
     \n      ] \
     \n    ] \
     \n  ], \
-    \n  "generation_timestamp": "2018-04-14 01:59:44", \
+    \n  "generation_timestamp": "2018-04-24 02:44:48", \
     \n  "neurodocker_version": "0.3.2" \
     \n}' > /neurodocker/neurodocker_specs.json
