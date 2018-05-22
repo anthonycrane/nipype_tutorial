@@ -5,7 +5,7 @@
 # pull request on our GitHub repository:
 #     https://github.com/kaczmarj/neurodocker
 #
-# Timestamp: 2018-04-24 02:44:48
+# Timestamp: 2018-04-25 04:27:51
 
 FROM neurodebian:stretch-non-free
 
@@ -79,35 +79,8 @@ ENV MATLABCMD=/opt/mcr/v92/toolbox/matlab \
     FORCE_SPMMCR=1 \
     LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:/opt/mcr/v92/runtime/glnxa64:/opt/mcr/v92/bin/glnxa64:/opt/mcr/v92/sys/os/glnxa64:$LD_LIBRARY_PATH
 
-#--------------------
-# Install AFNI latest
-#--------------------
-ENV PATH=/opt/afni:$PATH
-RUN apt-get update -qq && apt-get install -yq --no-install-recommends ed gsl-bin libglu1-mesa-dev libglib2.0-0 libglw1-mesa \
-    libgomp1 libjpeg62 libxm4 netpbm tcsh xfonts-base xvfb \
-    && libs_path=/usr/lib/x86_64-linux-gnu \
-    && if [ -f $libs_path/libgsl.so.19 ]; then \
-           ln $libs_path/libgsl.so.19 $libs_path/libgsl.so.0; \
-       fi \
-    && echo "Install libxp (not in all ubuntu/debian repositories)" \
-    && apt-get install -yq --no-install-recommends libxp6 \
-    || /bin/bash -c " \
-       curl --retry 5 -o /tmp/libxp6.deb -sSL http://mirrors.kernel.org/debian/pool/main/libx/libxp/libxp6_1.0.2-2_amd64.deb \
-       && dpkg -i /tmp/libxp6.deb && rm -f /tmp/libxp6.deb" \
-    && echo "Install libpng12 (not in all ubuntu/debian repositories" \
-    && apt-get install -yq --no-install-recommends libpng12-0 \
-    || /bin/bash -c " \
-       curl --retry 5 -o /tmp/libpng12.deb -sSL http://mirrors.kernel.org/debian/pool/main/libp/libpng/libpng12-0_1.2.49-1%2Bdeb7u2_amd64.deb \
-       && dpkg -i /tmp/libpng12.deb && rm -f /tmp/libpng12.deb" \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && echo "Downloading AFNI ..." \
-    && mkdir -p /opt/afni \
-    && curl -sSL --retry 5 https://afni.nimh.nih.gov/pub/dist/tgz/linux_openmp_64.tgz \
-    | tar zx -C /opt/afni --strip-components=1
-
 #------------------------
-# Install dcm2niix v1.0.20171215
+# Install dcm2niix master
 #------------------------
 WORKDIR /tmp
 RUN deps='cmake g++ gcc git make pigz zlib1g-dev' \
@@ -115,7 +88,7 @@ RUN deps='cmake g++ gcc git make pigz zlib1g-dev' \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && mkdir dcm2niix \
-    && curl -sSL https://github.com/rordenlab/dcm2niix/tarball/v1.0.20171215 | tar xz -C dcm2niix --strip-components 1 \
+    && curl -sSL https://github.com/rordenlab/dcm2niix/tarball/master | tar xz -C dcm2niix --strip-components 1 \
     && mkdir dcm2niix/build && cd dcm2niix/build \
     && cmake .. && make \
     && make install \
@@ -174,6 +147,9 @@ RUN bash -c "source activate neuro && jupyter nbextension enable exercise2/main 
 
 # User-defined instruction
 RUN mkdir -p ~/.jupyter && echo c.NotebookApp.ip = \"0.0.0.0\" > ~/.jupyter/jupyter_notebook_config.py
+
+# User-defined instruction
+RUN echo c.NotebookApp.token =  > ~/.jupyter/jupyter_notebook_config.py
 
 USER root
 
@@ -252,15 +228,9 @@ RUN echo '{ \
     \n      } \
     \n    ], \
     \n    [ \
-    \n      "afni", \
-    \n      { \
-    \n        "version": "latest" \
-    \n      } \
-    \n    ], \
-    \n    [ \
     \n      "dcm2niix", \
     \n      { \
-    \n        "version": "v1.0.20171215" \
+    \n        "version": "master" \
     \n      } \
     \n    ], \
     \n    [ \
@@ -284,6 +254,10 @@ RUN echo '{ \
     \n    [ \
     \n      "run", \
     \n      "mkdir -p ~/.jupyter && echo c.NotebookApp.ip = \\\"0.0.0.0\\\" > ~/.jupyter/jupyter_notebook_config.py" \
+    \n    ], \
+    \n    [ \
+    \n      "run", \
+    \n      "echo c.NotebookApp.token =  > ~/.jupyter/jupyter_notebook_config.py" \
     \n    ], \
     \n    [ \
     \n      "user", \
@@ -343,6 +317,6 @@ RUN echo '{ \
     \n      ] \
     \n    ] \
     \n  ], \
-    \n  "generation_timestamp": "2018-04-24 02:44:48", \
+    \n  "generation_timestamp": "2018-04-25 04:27:51", \
     \n  "neurodocker_version": "0.3.2" \
     \n}' > /neurodocker/neurodocker_specs.json
